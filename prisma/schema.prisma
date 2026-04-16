@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Article {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  content     String
+  thumbnail   String?
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId      Int
+  publishedAt     DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  views           Int      @default(0)
+  metaDesc        String?
+  isHighlight     Boolean  @default(false)
+  trendingScore   Float    @default(0)
+  originalSource  String?
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  slug     String    @unique
+  articles Article[]
+}
+
+model GameDeal {
+  id          Int      @id @default(autoincrement())
+  title       String
+  platform    String
+  url         String
+  imageUrl    String?
+  originalPrice String?
+  discountPrice String?
+  isFree      Boolean  @default(false)
+  expiresAt   DateTime?
+  createdAt   DateTime @default(now())
+}
+
+model SiteConfig {
+  id    Int    @id @default(1)
+  key   String @unique
+  value String
+}
+
+model AIEventLog {
+  id        Int      @id @default(autoincrement())
+  action    String
+  details   String?
+  timestamp DateTime @default(now())
+}

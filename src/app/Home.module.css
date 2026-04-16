@@ -1,0 +1,91 @@
+.homeContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.mainLayout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .mainLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.sectionHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sectionLine {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent-neon-blue), transparent);
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebarSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rankingList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.rankingItem {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.8rem;
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.rankingItem:hover {
+  border-color: var(--accent-neon-pink);
+  transform: translateX(5px);
+}
+
+.rankingNumber {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--accent-neon-blue);
+  opacity: 0.5;
+  width: 30px;
+  text-align: center;
+}
+
+.rankingTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.3;
+}

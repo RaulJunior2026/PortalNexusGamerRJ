@@ -1,0 +1,40 @@
+.sidebar {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.widget {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.widgetTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.adPlaceholder {
+  height: 250px;
+  background: repeating-linear-gradient(
+    45deg,
+    #1a1a1a,
+    #1a1a1a 10px,
+    #222 10px,
+    #222 20px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: 1px dashed var(--border-color);
+}
